@@ -1,0 +1,116 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/31/2023  19:45:06  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+E:\KEIL C51\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\Nixie tube PRINT (.\Listings\Nixie tube.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  E:\KEIL C51\C51\LIB\C51S.LIB (?C_STARTUP)
+  E:\KEIL C51\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\Nixie tube (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0012H     UNIT         ?DT?MAIN
+            IDATA   001AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0025H     UNIT         ?C_INITSEG
+            CODE    00B4H     0022H     UNIT         ?PR?MAIN?MAIN
+            CODE    00D6H     0014H     UNIT         ?PR?_DELAY?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Nixie tube (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN
+  +--> ?PR?_DELAY?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Nixie tube (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  C:00D6H         PUBLIC        _delay
+  D:0008H         PUBLIC        eight
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/31/2023  19:45:06  PAGE 2
+
+
+  B:00A0H.2       PUBLIC        P2_2
+  B:00A0H.3       PUBLIC        P2_3
+  B:00A0H.4       PUBLIC        P2_4
+  D:000AH         PUBLIC        three
+  D:000CH         PUBLIC        seven
+  C:00B4H         PUBLIC        main
+  D:000EH         PUBLIC        nine
+  D:0010H         PUBLIC        five
+  D:0012H         PUBLIC        four
+  D:0014H         PUBLIC        one
+  D:0016H         PUBLIC        six
+  D:0018H         PUBLIC        two
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        xms
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:00D6H         LINE#         4
+  C:00D6H         LINE#         5
+  C:00D6H         LINE#         7
+  C:00DAH         LINE#         8
+  C:00DAH         LINE#         9
+  C:00DCH         LINE#         10
+  C:00DEH         LINE#         12
+  C:00DEH         LINE#         13
+  C:00E0H         LINE#         14
+  C:00E2H         LINE#         15
+  C:00E7H         LINE#         16
+  C:00E9H         LINE#         17
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:00B4H         LINE#         19
+  C:00B4H         LINE#         20
+  C:00B4H         LINE#         21
+  C:00B4H         LINE#         22
+  C:00B4H         LINE#         23
+  C:00B6H         LINE#         24
+  C:00B8H         LINE#         25
+  C:00BAH         LINE#         26
+  C:00BDH         LINE#         27
+  C:00C4H         LINE#         28
+  C:00C6H         LINE#         29
+  C:00C8H         LINE#         30
+  C:00CAH         LINE#         31
+  C:00CDH         LINE#         32
+  C:00D4H         LINE#         33
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+Program Size: data=27.0 xdata=0 code=234
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
